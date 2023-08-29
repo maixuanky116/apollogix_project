@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "6efe7164-2f8d-47eb-9f48-b678ce007b1d",
+		"name": "TEST_Apollogix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16582443"
+	},
+	"item": [
+		{
+			"name": "1. Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 1,\r\n    \"productName\": \"product 1\",\r\n    \"price\": 50000,\r\n    \"description\": \"product 1\",\r\n    \"image\": \"image\",\r\n    \"category\": {\r\n        \"catId\": 1,\r\n        \"categoryName\": \"category 1\"\r\n    },\r\n    \"color\": {\r\n        \"colorId\": 1,\r\n        \"colorName\": \"blue\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. GET All Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/view",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. GET Product by name and category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/paging/search/filter?productName=product 1&categoryId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"paging",
+						"search",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "productName",
+							"value": "product 1"
+						},
+						{
+							"key": "categoryId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Add Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fistName\": \"Paul\",\r\n    \"lastName\": \"Tran\",\r\n    \"mobile\": \"01736352313\",\r\n    \"email\": \"paultran@gmail.com\",\r\n    \"address\": {\r\n        \"streetNo\": \"Ton Duc Thang\",\r\n        \"buildingName\": \"01736352313\",\r\n        \"city\": \"HCM\",\r\n        \"state\": \"Q1\",\r\n        \"country\": \"VN\",\r\n        \"zipCode\": \"70000\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customers/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. GET Customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customers/view",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Add to Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"productId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cart/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Add Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cid\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/orders/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
